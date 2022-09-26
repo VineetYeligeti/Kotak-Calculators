@@ -1,0 +1,764 @@
+<!DOCTYPE :html>
+<html lang="en">
+	<head>
+		<title>Income Tax Calculator</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="description" content=""/>
+		<meta name="keywords" content="keywords"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+		<link href="assets/images/favicon.ico" type="image/ico/gif" sizes="16x16" rel="shortcut icon"/>
+		<link rel="stylesheet" href="assets/css/header.css">
+		<link rel="stylesheet" href="assets/css/global.css">
+		
+		<link rel="stylesheet" href="assets/css/income-tax.css">
+		<link rel="stylesheet" href="assets/css/vendor/rangeslider.css">
+		<link rel="stylesheet" href="assets/css/footer.css">
+	</head>
+	<body>
+		<div class="interactionWrap incomeTax">
+			<header><img src="assets/images/header.png" alt="" class="header-img"/></header>
+			<div class="pageWrapper">
+				<section id="incomeTaxCalculator">
+					<div class="container">
+						<h1 class="section_heading">Income Tax Calculator</h1>
+						<div class="card">
+							<div class="steps-wrapper">
+								<ul class="tax-step">
+									<li class="tax-li active">1. Basic Details</li>
+									<li class="tax-li">2. Income Details</li>
+									<li class="tax-li">3. Deduction</li>
+									<li class="tax-li">4. Summary</li>
+								</ul>
+							</div>
+							<div class="step step1">
+								<div class="xs-steps">
+									<h3 class="summary-head">Basic Details</h3>
+									<div class="steps-num"> <span class="active-step">1&nbsp;</span>of 4</div>
+								</div>
+								<div class="row"> 
+									<div class="col-lg-7">
+										<p class="label">What is your age?</p>
+										<div class="radio_tabs">
+											<input id="belowSixty" type="radio" value="belowSixty" name="ageRadio" checked="checked" class="radio_tab"/>
+											<label for="belowSixty">Below 60 Years</label>
+											<input id="sixtyOneEighty" type="radio" value="sixtyOneEighty" name="ageRadio" class="radio_tab"/>
+											<label for="sixtyOneEighty">61 - 80 Years</label>
+											<input id="aboveEighty" type="radio" value="aboveEighty" name="ageRadio" class="radio_tab"/>
+											<label for="aboveEighty">81 Years &amp; Above</label>
+										</div>
+										<div class="form_group"> 
+											<label>Financial Year</label>
+											<div class="select-wrap"> 
+												<select id="financialYear" class="form-control">
+													<option value="2022_2023">2022 - 2023</option>
+													<option value="2023_2024">2023 - 2024</option>
+												</select>
+											</div>
+										</div>
+										<p class="label">Gender</p>
+										<div class="form-group"> 
+											<input id="taxforMale" type="radio" name="gender" checked="checked" class="form_radio"/>
+											<label for="taxforMale">Male</label>
+											<input id="taxforFemale" type="radio" name="gender" class="form_radio"/>
+											<label for="taxforFemale">Female</label>
+										</div>
+										<button id="proceedBasic" class="btn_block btn_primary">Proceed </button>
+									</div>
+									<div class="col-lg-5">
+										<picture><img src="assets/images/income-tax.jpg" alt="Income Tax Calculator"/></picture>
+									</div>
+								</div>
+							</div>
+							<div class="step step2">
+								<div class="xs-steps">
+									<h3 class="summary-head">Income Details</h3>
+									<div class="steps-num"> <span class="active-step">2&nbsp;</span>of 4</div>
+								</div>
+								<div class="row"> 
+									<div class="col-lg-6"> 
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<p class="goal-title">Annual Salary/Pension</p>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="annualIncomeInput" type="text" value="13,570,600" maxlength="12" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="annualIncomeRange" type="range" value="13570600" min="500000" max="100000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|       </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">5,00,000</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">10,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6"> 
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<p class="goal-title">Allowances And Exemptions</p>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="allowancesInput" type="text" value="15,000" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="allowancesRange" type="range" value="15000" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<p class="goal-title">Aggregate Savings Bank interest received</p>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="bankInterestInput" type="text" value="10,700" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="bankInterestRange" type="range" value="10700" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<p class="goal-title">Professional Tax </p>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="profTaxInput" type="text" value="2,500" maxlength="5" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="profTaxRange" type="range" value="2500" min="0" max="2500" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">2,500</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<p class="label">Type of House Property</p>
+										<div class="form-group"> 
+											<input id="selfOccupied" type="radio" value="selfOccupied" name="houseProperty" checked="checked" class="form_radio"/>
+											<label for="selfOccupied">Self Occupied</label>
+											<input id="letOut" type="radio" value="letOut" name="houseProperty" class="form_radio"/>
+											<label for="letOut">Let Out</label>
+										</div>
+										<div id="annualRentalWrap">
+											<div class="range-wrap">
+												<div class="goal-wrap">
+													<p class="goal-title">Annual Rental Income</p>
+													<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+														<input id="annualRentalInput" type="text" value="0" maxlength="11" class="form-control comma"/>
+													</div>
+												</div>
+												<div class="slider-wrap">
+													<input id="annualRentalRange" type="range" value="0" min="0" max="10000000" class="range-control"/>
+												</div>
+												<div class="invest-amt"></div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+												<div class="value-wrap">
+													<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+													<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<p class="goal-title">Income from Other Sources</p>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="incomeOtherInput" type="text" value="10,500" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="incomeOtherRange" type="range" value="10500" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="btn-wrapper">               
+									<button id="backIncome" class="btn btn_outline_primary">Back</button>
+									<button id="proceedIncome" class="btn btn_primary">Proceed</button>
+								</div>
+							</div>
+							<div class="step step3">
+								<div class="xs-steps">
+									<h3 class="summary-head">Deduction</h3>
+									<div class="steps-num"> <span class="active-step">3&nbsp;</span>of 4</div>
+								</div>
+								<div class="row"> 
+									<div class="col-lg-6"> 
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<div class="tooltip-wrap">
+													<p class="goal-title">Deductions U/s 80C<span data-tipso="1,50,000/- Maximum" class="tooltip tipso">i</span></p>
+												</div>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="deduction80CInput" type="text" value="1,16,818" maxlength="8" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="deduction80CRange" type="range" value="116818" min="0" max="150000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,50,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6"> 
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<div class="tooltip-wrap">
+													<p class="goal-title">NPS/ Atal PY Contribution U/s 80CCD (1)<span data-tipso="1,50,000/- Maximum" class="tooltip tipso">i</span></p>
+												</div>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="deduction80CCDInput" type="text" value="45,700" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="deduction80CCDRange" type="range" value="45700" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<div class="tooltip-wrap">
+													<p class="goal-title">NPS Contribution U/s 80CCD (1B)<span data-tipso="1,50,000/- Maximum" class="tooltip tipso">i</span></p>
+												</div>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="npsContriEmployeeInput" type="text" value="50,200" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="npsContriEmployeeRange" type="range" value="50200" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<div class="tooltip-wrap">
+													<p class="goal-title">NPS Contribution U/s 80CCD (2)<span data-tipso="1,50,000/- Maximum" class="tooltip tipso">i</span></p>
+												</div>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="npsContriEmployerInput" type="text" value="85,000" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="npsContriEmployerRange" type="range" value="85000" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<div class="tooltip-wrap">
+													<p class="goal-title">Rebate 87A<span data-tipso="1,50,000/- Maximum" class="tooltip tipso">i</span></p>
+												</div>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="amtInvestInput" type="text" value="60,000" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="amtInvestRange" type="range" value="60000" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<div class="tooltip-wrap med-wrap">
+													<p class="goal-title">Medical Insurance 80D<span data-tipso="1,50,000/- Maximum" class="tooltip tipso">i</span></p>
+												</div>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="deduction80DInput" type="text" value="60,000" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="deduction80DRange" type="range" value="60000" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+									<div class="col-lg-6">
+										<div class="range-wrap">
+											<div class="goal-wrap">
+												<div class="tooltip-wrap">
+													<p class="goal-title">Interest on home loan (80EEA)<span data-tipso="1,50,000/- Maximum" class="tooltip tipso">i</span></p>
+												</div>
+												<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+													<input id="homeLoanInterestInput" type="text" value="2,00,000" maxlength="11" class="form-control comma"/>
+												</div>
+											</div>
+											<div class="slider-wrap">
+												<input id="homeLoanInterestInput" type="range" value="200000" min="0" max="10000000" class="range-control"/>
+											</div>
+											<div class="invest-amt">
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|</div>
+												<div class="amt-slot">|   </div>
+											</div>
+											<div class="value-wrap">
+												<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">0</span></div>
+												<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="btn-wrapper">               
+									<button id="backDeduction" class="btn btn_outline_primary">Back</button>
+									<button id="proceedDeduction" class="btn btn_primary">Proceed</button>
+								</div>
+							</div>
+							<div class="step step4">
+								<div class="xs-steps">
+									<h3 class="summary-head">Summary</h3>
+									<div class="steps-num"> <span class="active-step">4&nbsp;</span>of 4</div>
+								</div>
+								<div class="tax-table">
+									<table width="100%">
+										<tr>
+											<td width="25%" class="mobile-width"></td>
+											<td width="55%" class="center-tabel">
+												<table width="100%">
+													<tr>
+														<th>Your Tax Results</th>
+														<th class="txt-right">Old Regime</th>
+														<th class="txt-right">New Regime</th>
+													</tr>
+													<tr>
+														<td class="txt-left">Total Gross Income</td>
+														<td>&#8377;&nbsp;<span id="totalGrossIncome"></span></td>
+														<td>&#8377;&nbsp;<span id="totalGrossIncomeNew"></span></td>
+													</tr>
+													<tr>
+														<td class="txt-left">Total Deduction</td>
+														<td>&#8377;&nbsp;<span id="totalDeduction"></span></td>
+														<td>&#8377;&nbsp;<span id="totalDeductionNew"></span></td>
+													</tr>
+													<tr>
+														<td class="brd-bottom txt-left">Total Taxable Income</td>
+														<td class="brd-bottom">&#8377;&nbsp;<span id="totalTaxableIncome"></span></td>
+														<td class="brd-bottom">&#8377;&nbsp;<span id="totalTaxableIncomeNew"></span></td>
+													</tr>
+													<tr>
+														<th class="fn-pad txt-left">Net Payable Tax</th>
+														<th class="fn-pad txt-right">&#8377; <span id="netTaxPayable"></span></th>
+														<th class="fn-pad txt-right">&#8377;&nbsp;<span id="netTaxPayableNew"></span></th>
+													</tr>
+												</table>
+											</td>
+											<td width="20%" class="mobile-width"></td>
+										</tr>
+									</table>
+								</div>
+								<div class="inocme-tax-sub-head">Save upto <span class="amt">&#8377; </span><span class="amt">XXXXXX </span>with Kotak Life  </div>
+								<div class="plans-wrapper">
+									<div class="row">
+										<div class="plan-box">
+											<div class="icon"> <img src="assets/images/icon-protection-plans.svg" alt="Protection Plans" title="Protection Plans"/></div>
+											<div class="plans-head">Protection Plans</div>
+											<div class="tax-saving">Tax Saving upto <span class="tax-amt">&#8377; 50,000/-</span></div><a href="#" class="plan-now">Plan now</a>
+										</div>
+										<div class="plan-box">
+											<div class="icon"> <img src="assets/images/icon-health-plans.svg" alt="Health Plans" title="Health Plans"/></div>
+											<div class="plans-head">Health Plans</div>
+											<div class="tax-saving">Tax Saving upto <span class="tax-amt">&#8377; 1,50,000/-</span></div><a href="#" class="plan-now">Plan now</a>
+										</div>
+										<div class="plan-box">
+											<div class="icon"> <img src="assets/images/icon-retirement-plans.svg" alt="Retirement Plans" title="Retirement Plans"/></div>
+											<div class="plans-head">Retirement Plans</div>
+											<div class="tax-saving">Tax Saving upto <span class="tax-amt">&#8377; 75,000/-</span></div><a href="#" class="plan-now">Plan now</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<div class="modal-overlay close-modal">
+					<div class="modal">
+						<div class="close-modal"><img src="assets/images/close.svg" alt="" title=""/></div>
+						<div class="modal-content">
+							<div class="incometax-breakdown-wrapper">
+								<h2 class="sec-head">Detailed breakdown of your <span class="sec-head-blue">income tax</span></h2>
+								<div class="breakdown-table">
+									<table width="100%" celspacing="0" cellpadding="0" border="0">
+										<tr>
+											<th class="table-head brd-right brd-left brd-top">Particulars</th>
+											<th class="table-head2 brd-right brd-top">Amount Entered</th>
+											<th class="table-head brd-right brd-top">Amount Considered</th>
+										</tr>
+										<tr>
+											<td class="table-data brd-right brd-left">Income from Salary (A)</td>
+											<td class="table-data2 brd-right">&#8377;&nbsp;<span id="incomeFromSalary"></span></td>
+											<td class="table-data brd-right">&#8377;&nbsp;<span id="incomeFromSalaryNew"></span></td>
+										</tr>
+										<tr>
+											<td class="table-data brd-right brd-left">Exemptions (B)</td>
+											<td class="table-data2 brd-right">&#8377;&nbsp;<span id="exemptions"></span></td>
+											<td class="table-data brd-right">&#8377;&nbsp;<span id="exemptionsNew"></span></td>
+										</tr>
+										<tr>
+											<td class="table-data brd-right brd-left">Income from Other Sources (C)</td>
+											<td class="table-data2 brd-right">&#8377;&nbsp;<span id="incomeOther"></span></td>
+											<td class="table-data brd-right">&#8377;&nbsp;<span id="incomeOtherNew"></span></td>
+										</tr>
+										<tr>
+											<th class="brd-right brd-left table-head"> GROSS TOTAL INCOME (D) = (A) - (B) + (C)</th>
+											<th class="brd-right table-head2">&nbsp;</th>
+											<th class="brd-right table-head">&#8377;&nbsp; <span id="grossTotalIncome"></span></th>
+										</tr>
+										<tr>
+											<td class="table-data brd-right brd-left">Professional Tax</td>
+											<td class="table-data2 brd-right">&#8377;&nbsp;<span id="profTax"></span></td>
+											<td class="table-data brd-right">&#8377;&nbsp;<span id="profTaxNew"></span></td>
+										</tr>
+										<tr>
+											<td class="table-data brd-right brd-left">Standard Deduction</td>
+											<td class="table-data2 brd-right">&nbsp;</td>
+											<td class="table-data brd-right">&#8377;&nbsp;<span id="standardDeduction"></span></td>
+										</tr>
+										<tr>
+											<th class="table-head brd-right brd-left">TOTAL DEDUCTIONS (E)</th>
+											<th class="table-head2 brd-right">&nbsp;</th>
+											<th class="table-head brd-right">&#8377;&nbsp;<span id="totalDeductions"></span></th>
+										</tr>
+										<tr>
+											<th class="table-head brd-right brd-left">NET TAXABLE AMOUNT (F) = (D) - (E)</th>
+											<th class="table-head2 brd-right">&nbsp;</th>
+											<th class="table-head brd-right">&#8377;&nbsp;<span id="netTaxableAmount"></span></th>
+										</tr>
+										<tr>
+											<th class="table-head brd-right brd-left">TAX ON TAXABLE AMOUNT (G)</th>
+											<th class="table-head2 brd-right">&nbsp;</th>
+											<th class="table-head brd-right">&#8377;&nbsp;<span id="taxTaxableAmount"></span></th>
+										</tr>
+										<tr>
+											<td class="table-data brd-right brd-left">Surcharge @% (H)</td>
+											<td class="table-data2 brd-right">&nbsp;</td>
+											<td class="table-data brd-right">&#8377;&nbsp;<span id="surcharge"></span></td>
+										</tr>
+										<tr>
+											<td class="table-data brd-right brd-left">Education Cess @4% (I)</td>
+											<td class="table-data2 brd-right">&nbsp;</td>
+											<td class="table-data brd-right">&#8377;&nbsp; <span id="educationCess"></span></td>
+										</tr>
+										<tr>
+											<th class="table-head brd-right brd-left brd-bottom">TOTAL TAX (J) = (G) + (H) + (I)</th>
+											<th class="table-head2 brd-right brd-bottom">&nbsp;</th>
+											<th class="table-head brd-right brd-bottom">&#8377;&nbsp; <span id="totalTax"></span></th>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<section id="taxTable"> 
+					<div class="container">
+						<div class="secWarp"> 
+							<div class="rightSec"> 
+								<h2 class="tableTitle">Income Tax Slab</h2>
+								<div class="tableWarp">
+									<table class="taxTable"> 
+										<thead class="taxTablehead">  
+											<tr> 
+												<th class="borderRight">Taxable Income Range </th>
+												<th class="borderRight">Old Regime </th>
+												<th>New Regime </th>
+											</tr>
+										</thead>
+										<tbody class="taxTablebody"> 
+											<tr> 
+												<td class="borderRight">0-2.5 lakhs</td>
+												<td class="borderRight">No Tax</td>
+												<td>No Tax</td>
+											</tr>
+											<tr> 
+												<td class="borderRight">0-2.5 lakhs</td>
+												<td class="borderRight">5%</td>
+												<td>5%</td>
+											</tr>
+											<tr> 
+												<td class="borderRight">0-2.5 lakhs</td>
+												<td class="borderRight">5%</td>
+												<td>5%</td>
+											</tr>
+											<tr> 
+												<td class="borderRight">0-2.5 lakhs</td>
+												<td class="borderRight">5%</td>
+												<td>5%</td>
+											</tr>
+											<tr> 
+												<td class="borderRight">0-2.5 lakhs</td>
+												<td class="borderRight">5%</td>
+												<td>5%</td>
+											</tr>
+											<tr> 
+												<td class="borderRight">0-2.5 lakhs</td>
+												<td class="borderRight">5%</td>
+												<td>5%</td>
+											</tr>
+											<tr> 
+												<td class="borderRight">0-2.5 lakhs</td>
+												<td class="borderRight">5%</td>
+												<td>5%</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</div>
+							<div class="leftSec">
+								<div class="sec"> 
+									<h2 class="claimHead">Claims on Tax deductions</h2>
+									<div class="claimsWarp">
+										<p class="claimsDesc"><span class="fontBold">Section 87A:&nbsp;</span>Income below <span>&#8377; 5 lakh&nbsp;</span>is eligible for a tax rebate of up to &#8377; 12,500.</p>
+										<p class="claimsDesc"><span class="fontBold">Section 80CCD (1B):&nbsp;</span>For exemption of up to &#8377;&nbsp;<span>2 lakh&nbsp;</span>for money deposited in the &nbsp;<span>National Pension System.</span></p>
+										<p class="claimsDesc"><span class="fontBold">Section 80C:&nbsp;</span>Rebate of up to&nbsp;<span>&#8377; 1.5 lakh&nbsp;</span>in any tax-saver fixed deposits,&nbsp;<span>Public Provident Funds (PPF), National Savings Certificate, Unit-linked Insurance Plans, and Equity-linked Savings Schemes on the Interest Income.</span></p>
+										<p class="claimsDesc"><span class="fontBold">Section 80D: &nbsp;</span>Up to <span class="txtsecBold">&#8377; 25,000&nbsp;</span>tax exemption on&nbsp;<span>Medical Insurance Premium bills.&nbsp;</span>The limit rises to &#8377; 50,000 for senior citizens. </p>
+										<p class="claimsDesc"><span class="fontBold">Section 80G:&nbsp;</span>Any donations made to charitable organizations is&nbsp;<span>fully exempt from tax calculations.</span></p>
+										<p class="claimsDesc"><span class="fontBold">Section 80E:&nbsp;</span>Interest on education loan enjoys a&nbsp; <span>100% tax rebate for up to 8 years.</span></p>
+										<p class="claimsDesc"><span class="fontBold">Section 8OTTA/80TTB:&nbsp;</span>Interest income from savings accounts is eligible for tax waivers of up to ₹ 10,000. For senior citizens, all forms of interest income up to Rs. 50,000 are fully waivered from tax calculations, under Section 8OTTB.</p>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="comppundFaq"> 
+					<div class="container">
+						<div class="accordSec">
+							<h2 class="accordTitle">Frequently Asked Questions </h2>
+							<div class="accordList"> 
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>1</span>What is compounding?</a></div><span class="icon"> </span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nisi sunt itaque libero soluta nobis, molestias odio eos officiis nemo nam magnam, minima vel neque.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>2</span>What is compound interest?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam iusto qui vel consectetur magni cumque corporis voluptate aliquid, commodi enim alias? Quas architecto quibusdam qui.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>3</span>How is compound interest calculated?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>4</span>What is the difference between simple interest and compound interest?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>5</span>What is power of compounding?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>6</span>What is the formula for calculating compound interest?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>7</span>What is the difference between Cumulative and Compound Interest?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+							</div>
+							<div class="btnWarp"><a href="javascript:void(0);" class="btn_outline_primary">See More</a></div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- Start footer scripts-->
+			<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+			<script src="assets/js/global.js"></script>
+			<!--build:js assets/js/vendor/rangeslider.min.js-->
+			<script src="assets/js/vendor/rangeslider.min.js"></script>
+			<!--build:js assets/js/vendor/tipso.min.js-->
+			<script src="assets/js/vendor/tipso.min.js"></script>
+			<!--build:js assets/js/income-tax.js-->
+			<script src="assets/js/income-tax.js"></script>
+			<!-- End footer scripts-->
+		</div>
+	</body>
+</html>

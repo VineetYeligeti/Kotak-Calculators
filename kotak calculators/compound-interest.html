@@ -1,0 +1,260 @@
+<!DOCTYPE :html>
+<html lang="en">
+	<head>
+		<title>Compound Interest Calculator</title>
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<meta name="description" content=""/>
+		<meta name="keywords" content="keywords"/>
+		<meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0"/>
+		<link href="assets/images/favicon.ico" type="image/ico/gif" sizes="16x16" rel="shortcut icon"/>
+		<link rel="stylesheet" href="assets/css/header.css">
+		<link rel="stylesheet" href="assets/css/global.css">
+		
+		<link rel="stylesheet" href="assets/css/compound-interest.css">
+		<link rel="stylesheet" href="assets/css/vendor/rangeslider.css">
+		<link rel="stylesheet" href="assets/css/footer.css">
+	</head>
+	<body>
+		<div class="interactionWrap compoundInterest">
+			<header><img src="assets/images/header.png" alt="" class="header-img"/></header>
+			<div class="pageWrapper">
+				<section id="ci_calculator">
+					<div class="container">
+						<h1 class="section_heading">Compound Interest Calculator</h1>
+						<div class="row">
+							<div class="col-lg-7"> 
+								<div class="card"> 
+									<div class="form_group"> 
+										<label class="label-name">Frequency</label>
+										<div class="select-wrap"> 
+											<select id="compoundFrequency" class="form-control">
+												<option value="yearly">Yearly</option>
+												<option value="monthly">Monthly</option>
+											</select>
+										</div>
+									</div>
+									<div class="range-wrap">
+										<div class="goal-wrap">
+											<p class="goal-title">Amount You Would Like To Invest?</p>
+											<div class="input-wrap"><span class="rupee">&#8377;&nbsp;</span>
+												<input id="amtInvestInput" type="text" value="1,00,000" maxlength="11" class="form-control comma"/>
+											</div>
+										</div>
+										<div class="slider-wrap">
+											<input id="amtInvestRange" type="range" value="100000" min="10" max="10000000" step="0.5" class="range-control"/>
+										</div>
+										<div class="invest-amt">
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|    </div>
+										</div>
+										<div class="value-wrap">
+											<div class="min"><span class="rupee">&#8377;&nbsp;</span><span class="amount">10</span></div>
+											<div class="max"><span class="rupee">&#8377;&nbsp;</span><span class="amount">1,00,00,000</span></div>
+										</div>
+									</div>
+									<div class="range-wrap">
+										<div class="goal-wrap">
+											<p class="goal-title">Number Of Years You Want To Invest?</p>
+											<div class="input-wrap year-wrap">
+												<input id="yearsInvestInput" type="text" value="10" maxlength="2" class="form-control"/><span>Years</span>
+											</div>
+										</div>
+										<div class="slider-wrap">
+											<input id="yearsInvestRange" type="range" value="10" min="1" max="30" class="range-control"/>
+										</div>
+										<div class="invest-amt">
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">| </div>
+										</div>
+										<div class="value-wrap">
+											<div class="min"><span class="amount">1&nbsp;</span><span>Year</span></div>
+											<div class="max"><span class="amount">30&nbsp;</span><span>Years</span></div>
+										</div>
+									</div>
+									<div class="range-wrap">
+										<div class="goal-wrap">
+											<p class="goal-title">Number Of Years Stay Invested For?</p>
+											<div class="input-wrap year-wrap">
+												<input id="stayInvestedInput" type="text" value="12" maxlength="2" class="form-control"/><span>Years</span>
+											</div>
+										</div>
+										<div class="slider-wrap">
+											<input id="stayInvestedRange" type="range" value="12" min="1" max="30" class="range-control"/>
+										</div>
+										<div class="invest-amt">
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">| </div>
+										</div>
+										<div class="value-wrap">
+											<div class="min"><span class="amount">1&nbsp;</span><span>Year</span></div>
+											<div class="max"><span class="amount">30&nbsp;</span><span>Years</span></div>
+										</div>
+										<p class="error-text">Years you want to Invest cannot be less than Stay Invested</p>
+									</div>
+									<div class="range-wrap">
+										<div class="goal-wrap">
+											<p class="goal-title">Expected Interest Rate (P.A.)</p>
+											<div class="input-wrap percent-wrap">
+												<input id="rateOfInterestInput" type="text" value="8" maxlength="2" class="form-control"/><span>%</span>
+											</div>
+										</div>
+										<div class="slider-wrap">
+											<input id="rateOfInterestRange" type="range" value="8" min="1" max="30" class="range-control"/>
+										</div>
+										<div class="invest-amt">
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">|</div>
+											<div class="amt-slot">| </div>
+										</div>
+										<div class="value-wrap">
+											<div class="min"><span class="amount">1&nbsp;</span><span>%</span></div>
+											<div class="max"><span class="amount">30&nbsp;</span><span>%</span></div>
+										</div>
+									</div>
+									<button id="calculate" class="btn_block btn_primary">Calculate</button>
+								</div>
+							</div>
+							<div class="col-lg-5"> 
+								<div class="card card_middle p-0">
+									<div class="card_body">
+										<h2 class="card_title">You may get<br/><span class="amt_return">&#8377;&nbsp;<span id="compoundReturn" class="addCommaDefault"></span></span></h2>
+										<p>If you invest&nbsp;<span class="invested_val">&#8377;&nbsp;<span id="totalInvested" class="addCommaDefault"></span></span>&nbsp;for<br/><span class="years_val"> </span>&nbsp;Years at&nbsp;<span class="percent_val"> </span>% <span class="perAnnum">p.a.</span><span class="perMonth">p.m. </span></p>
+										<div id="legend" class="legend_text"></div>
+										<canvas id="compound_interest_chart" height="302" class="compound_interest_chart"></canvas><a href="" class="btn_primary m-">Invest Now</a>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="HowtouseCalc">
+					<div class="container">
+						<div class="secWarp">
+							<div class="leftSec">
+								<h2 class="Title">How to use Compound Interest Calculator?</h2>
+								<p class="Desc">Experience the power of compounding and see how much your wealth can grow with the help our quick Compound Interest Calculator.</p>
+								<div class="Steps">
+									<div class="stepsCont"><span> <img src="assets/images/tick.svg" alt=""/></span>
+										<div class="stepWarp">
+											<h4 class="stepTitle">Step 1</h4>
+											<p class="stepDesc">Visit the Compound Interest Calculator page to plan for your future goals.</p>
+										</div>
+									</div>
+									<div class="stepsCont"><span> <img src="assets/images/tick.svg" alt=""/></span>
+										<div class="stepWarp">
+											<h4 class="stepTitle">Step 2</h4>
+											<p class="stepDesc">Compound Interest Calculator can be used to calculate future expenses for many goals. Enter your details carefully to ensure an accurate result. </p>
+										</div>
+									</div>
+									<div class="stepsCont"><span> <img src="assets/images/tick.svg" alt=""/></span>
+										<div class="stepWarp">
+											<h4 class="stepTitle">Step 3</h4>
+											<p class="stepDesc">Hit enter and check your amount. You can use this calculator to check different amounts and plan your SIP investments.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="rightSec">
+								<picture>
+									<source media="(min-width:767px)" srcset="assets/images/undraw-calculator.png"/><img src="assets/images/undraw-calculator-mob.png" alt="compundImg"/>
+								</picture>
+							</div>
+						</div>
+					</div>
+				</section>
+				<section id="comppundFaq"> 
+					<div class="container">
+						<div class="accordSec">
+							<h2 class="accordTitle">Frequently Asked Questions </h2>
+							<div class="accordList"> 
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>1</span>What is compounding?</a></div><span class="icon"> </span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deleniti nisi sunt itaque libero soluta nobis, molestias odio eos officiis nemo nam magnam, minima vel neque.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>2</span>What is compound interest?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Veniam iusto qui vel consectetur magni cumque corporis voluptate aliquid, commodi enim alias? Quas architecto quibusdam qui.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>3</span>How is compound interest calculated?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>4</span>What is the difference between simple interest and compound interest?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>5</span>What is power of compounding?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>6</span>What is the formula for calculating compound interest?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+								<div class="accordItem"> 
+									<div class="accordLinks"> <a href="javascript:void(0);"> <span>7</span>What is the difference between Cumulative and Compound Interest?</a></div><span class="icon"></span>
+									<div class="accordDesc"> 
+										<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Maiores quisquam incidunt ipsum. Rem sint odio sapiente tempora animi nihil eum, dicta, facere minus, repellat officia.</p>
+									</div>
+								</div>
+							</div>
+							<div class="btnWarp"><a href="javascript:void(0);" class="btn_outline_primary">See More</a></div>
+						</div>
+					</div>
+				</section>
+			</div>
+			<!-- Start footer scripts-->
+			<script src="assets/js/vendor/jquery-3.6.0.min.js"></script>
+			<script src="assets/js/global.js"></script>
+			<!--build:js assets/js/vendor/rangeslider.min.js-->
+			<script src="assets/js/vendor/rangeslider.min.js"></script>
+			<!--build:js assets/js/vendor/tipso.min.js-->
+			<script src="assets/js/vendor/tipso.min.js"></script>
+			<!--build:js assets/js/vendor/chart.js-->
+			<script src="assets/js/vendor/chart.js"></script>
+			<!--build:js assets/js/compound-interest.js-->
+			<script src="assets/js/compound-interest.js"></script>
+			<!-- End footer scripts-->
+		</div>
+	</body>
+</html>
